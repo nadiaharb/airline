@@ -1,0 +1,13 @@
+name: Testing
+on: push
+
+
+jobs:
+  test_project:
+    runs-on: windows-latest
+    steps:
+      -uses: action/checkout@v2
+      -name: Run Django unit test
+      run:
+        pip3 install --user django
+        python3.9 manage.py test
